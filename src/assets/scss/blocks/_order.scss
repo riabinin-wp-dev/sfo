@@ -1,0 +1,114 @@
+.order {
+    &>.container>.grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        
+        @include mobile{
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        }
+    }
+
+    & .project__title {
+        max-width: 435px;
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+.order__form {
+    & * {
+
+        &:not(.project__submit){
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 15px;
+            color: #404040;
+        }
+    }
+
+    &>p {
+        font-size: 17px;
+        color: #404040;
+        margin-bottom: 40px;
+        @include small-tablet{
+            text-align: center;
+        }
+    }
+
+    & .grid-row {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 16px;
+        
+        @include small-mobile{
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        }
+    }
+
+    & .project__input {
+        width: 100%;
+    }
+}
+
+.order__form__submit {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+
+    & p {
+        font-size: 15px;
+        color: #9c9c9c;
+
+        @include mobile{
+            text-align: center;
+        }
+    }
+
+    @include mobile{
+        flex-direction: column-reverse;
+    }
+
+    & span{
+        @include mobile{
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.order.--vacancy {
+    & .project__title {
+        max-width: 833px;
+    }
+
+    & .order__form {
+
+        & p {
+            letter-spacing: -.2px;
+            margin-bottom: 20px;
+        }
+    }
+
+    & .file-upload {
+        display: flex;
+        align-items: center;
+    }
+
+    & #file-button {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        & span {
+            font-size: 15px;
+            color: #404040;
+        }
+    }
+
+    & #file-input {
+        display: none;
+        /* Скрыть input */
+    }
+
+}

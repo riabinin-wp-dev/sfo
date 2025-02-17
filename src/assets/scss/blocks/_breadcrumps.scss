@@ -1,0 +1,35 @@
+#breadcrumps {
+    padding: 16px 20px;
+
+    @include small-tablet{
+        text-align: center;
+      }
+    
+    & a {
+        font-weight: 500;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    & span{
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    & span>span{
+        color: white;
+    }
+}
+
+.dark{
+    & #breadcrumps span,
+    & #breadcrumps span a {
+        color: rgba(64, 64, 64, 0.5);
+    }
+
+    & #breadcrumps span>span {
+        color: #404040;
+    }
+
+    & #breadcrumps {
+        padding-left: 0;
+    }
+}

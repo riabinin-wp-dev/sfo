@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head }}
+</head>
+
+<body>
+    <div class="page">
+        {{> header }}
+
+        <main class="main">
+            {{> body }}
+        </main>
+        {{> footer }}
+        <div class="overlay"></div>
+    </div>
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const playButton = document.querySelector('[data-play]');
+            const iframe = document.querySelector('.embed-container iframe');
+            const originalSrc = iframe.src;
+
+            playButton.addEventListener('click', function () {
+                const parent = document.querySelector('.video__inner');
+                parent.classList.add('hide');
+                iframe.src = originalSrc + "?autoplay=1"; // Добавляем параметр autoplay для автоматического воспроизведения
+                const playButton = document.querySelector('[data-play]');
+                parent.classList.add('hide');
+            });
+        });
+    </script>
+</body>
+
+</html>

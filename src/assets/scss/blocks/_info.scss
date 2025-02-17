@@ -1,0 +1,119 @@
+.info {
+    & .info__title {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 125%;
+        margin-bottom: 35px;
+
+        @include small-tablet {
+            text-align: center;
+        }
+    }
+
+    & .grid-row {
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
+
+        & .info__item {
+            background: #e9eef3;
+            border-radius: 10px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @include small-tablet {
+                padding-left: 13px;
+                padding-right: 13px;
+                align-items: center;
+            }
+
+            & h3 {
+                font-family: var(--second-family);
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 125%;
+                color: #404040;
+                margin: 0;
+                margin-bottom: 25px;
+                max-width: 349px;
+
+                @include small-tablet {
+                    font-size: 17px;
+                    text-align: center;
+                }
+            }
+
+            & p {
+                font-weight: 500;
+                font-size: 17px;
+                line-height: 125%;
+                color: #404040;
+                margin: 0;
+                margin-bottom: 25px;
+                max-width: 349px;
+
+                @include small-tablet {
+                    font-size: 15px;
+                    text-align: center;
+                }
+            }
+
+            & a {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+        }
+    }
+
+    &.info__phone {
+
+        & .grid-row {
+            &:nth-child(2) {
+                grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+
+                @include mobile {
+                    display: none;
+                }
+            }
+
+            &:nth-child(3) {
+                display: none;
+
+                @include mobile {
+                    display: block;
+                }
+
+                & .swiper-button-prev {
+                    background-color: var(--accent-color);
+
+                    & svg {
+                        stroke: #fff;
+                    }
+
+                    &:hover {
+                        background-color: #fff;
+
+                        & svg {
+                            stroke: var(--accent-color);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        & .type__tile {
+            margin-top: 30px;
+            margin-left: auto;
+            font-weight: 500;
+            font-size: 17px;
+            max-height: unset;
+        }
+    }
+}
+
+.swiper__info {}
